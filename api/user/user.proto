@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+option go_package = "/user";
+
+message ConfirmResponse {
+    bool ok = 1;
+}
+
+message CreateUserRequest {
+    string username = 1;
+    string email = 2;
+    string password = 3;
+    string phoneNumber = 4;
+}
+
+message ConfirmUserRequest {
+    string username = 1;
+    string code = 2;
+}
+
+message ResendConfirmationRequest {
+    string username = 1;
+}
+
+message UsernameTakenRequest {
+    string username = 1;
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string jwt = 1;
+}
+
+message VerifyJWTRequest {
+    string jwt = 1;
+}
+
+message UserDetailsRequest {
+    string jwt = 1;
+}
+
+message UserDetailsResponse {
+    int32 id = 1;
+    string username = 2;
+    string email = 3;
+    string phoneNumber = 4;
+    bool confirmed = 5;
+}
+
+service User {
+    rpc CreateUser (CreateUserRequest) returns (ConfirmResponse);
+    rpc ConfirmUser (ConfirmUserRequest) returns (ConfirmResponse);
+    rpc ResendConfirmation (ResendConfirmationRequest) returns (ConfirmResponse);
+    rpc UsernameTaken (UsernameTakenRequest) returns (ConfirmResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc VerifyJWT (VerifyJWTRequest) returns (ConfirmResponse);
+    rpc UserDetails (UserDetailsRequest) returns (UserDetailsResponse);
+}
