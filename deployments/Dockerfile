@@ -9,7 +9,7 @@ WORKDIR /app/
 ADD https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/protoc-3.11.4-linux-x86_64.zip /app/protoc.zip
 RUN unzip protoc.zip
 
-RUN go get github.com/golang/protobuf/protoc-gen-go
+RUN go get github.com/golang/protobuf/protoc-gen-go github.com/golang/protobuf/proto
 
 RUN chmod +x /app/bin/protoc
 RUN mv /app/bin/protoc /usr/local/bin/
