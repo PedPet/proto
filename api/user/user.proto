@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "common.proto";
 
-package user;
 option go_package = "github.com/PedPet/proto/user";
 
 message CreateUserRequest {
