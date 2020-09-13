@@ -1,7 +1,8 @@
 syntax = "proto3";
 
-import "github.com/PedPet/proto/common.proto";
+import "common.proto";
 
+package user;
 option go_package = "/user";
 
 message CreateUserRequest {
@@ -50,11 +51,11 @@ message UserDetailsResponse {
 }
 
 service User {
-    rpc CreateUser (CreateUserRequest) returns (ConfirmResponse);
-    rpc ConfirmUser (ConfirmUserRequest) returns (ConfirmResponse);
-    rpc ResendConfirmation (ResendConfirmationRequest) returns (ConfirmResponse);
-    rpc UsernameTaken (UsernameTakenRequest) returns (ConfirmResponse);
+    rpc CreateUser (CreateUserRequest) returns (common.proto.ConfirmResponse);
+    rpc ConfirmUser (ConfirmUserRequest) returns (common.proto.ConfirmResponse);
+    rpc ResendConfirmation (ResendConfirmationRequest) returns (common.proto.ConfirmResponse);
+    rpc UsernameTaken (UsernameTakenRequest) returns (common.proto.ConfirmResponse);
     rpc Login (LoginRequest) returns (LoginResponse);
-    rpc VerifyJWT (VerifyJWTRequest) returns (ConfirmResponse);
+    rpc VerifyJWT (VerifyJWTRequest) returns (common.proto.ConfirmResponse);
     rpc UserDetails (UserDetailsRequest) returns (UserDetailsResponse);
 }

@@ -36,9 +36,9 @@ message DeleteBreederRequest {
 }
 
 service Breeder {
-    rpc CreateBreeder (BreederMSG) returns (ConfirmResponse);
+    rpc CreateBreeder (BreederMSG) returns (common.proto.ConfirmResponse);
     rpc GetBreeder (GetBreederRequest) returns (BreederMSG);
     rpc UpdateBreeder (UpdateBreederRequest) returns (BreederMSG);
-    rpc DeleteBreeder (DeleteBreederRequest) returns (ConfirmResponse);
+    rpc DeleteBreeder (DeleteBreederRequest) returns (common.proto.ConfirmResponse);
 }
 
