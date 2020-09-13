@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "common.proto";
 
-option go_package = "/breeder";
+option go_package = "github.com/PedPet/proto/breeder";
 
 message BreederMSG {
     string affiix = 1;
