@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "common.proto";
+import "github.com/PedPet/proto/common.proto";
 
 option go_package = "/user";
 
