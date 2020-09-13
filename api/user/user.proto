@@ -1,10 +1,8 @@
 syntax = "proto3";
 
-option go_package = "/user";
+import "common.proto";
 
-message ConfirmResponse {
-    bool ok = 1;
-}
+option go_package = "/user";
 
 message CreateUserRequest {
     string username = 1;

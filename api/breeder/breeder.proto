@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "common.proto";
+
+option go_package = "/breeder";
+
+message BreederMSG {
+    string affiix = 1;
+    string shortAffix = 2;
+    string website = 3;
+    repeated Owners owners = 4;
+}
+
+message Owners {
+    string forename = 1;
+    string surname = 2;
+    string address = 3;
+    string email = 4;
+
+}
+
+message GetBreederRequest {
+    int32 id = 1;
+}
+
+message UpdateBreederRequest {
+    int32 id = 1;
+    string affix = 2;
+    string shortAffix = 3;
+    string website = 4;
+    repeated Owners owners = 5;
+}
+
+message DeleteBreederRequest {
+    int32 id = 1;
+}
+
+service Breeder {
+    rpc CreateBreeder (BreederMSG) returns (ConfirmResponse);
+    rpc GetBreeder (GetBreederRequest) returns (BreederMSG);
+    rpc UpdateBreeder (UpdateBreederRequest) returns (BreederMSG);
+    rpc DeleteBreeder (DeleteBreederRequest) returns (ConfirmResponse);
+}
+
