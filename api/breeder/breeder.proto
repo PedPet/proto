@@ -6,7 +6,7 @@ option go_package = "github.com/PedPet/proto/breeder";
 
 message BreederMSG {
     optional int32  id = 1;
-    string affiix = 2;
+    string affix = 2;
     string shortAffix = 3;
     string website = 4;
     repeated Owners owners = 5;

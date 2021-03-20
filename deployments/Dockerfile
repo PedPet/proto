@@ -6,7 +6,7 @@ RUN mkdir /app/
 WORKDIR /app/
 
 # Get protoc and unzip and add to path
-ADD https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/protoc-3.11.4-linux-x86_64.zip /app/protoc.zip
+ADD https://github.com/protocolbuffers/protobuf/releases/download/v3.15.6/protoc-3.15.6-linux-x86_64.zip /app/protoc.zip
 RUN unzip protoc.zip
 
 RUN go get github.com/golang/protobuf/protoc-gen-go github.com/golang/protobuf/proto
